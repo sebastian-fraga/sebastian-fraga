@@ -1,0 +1,35 @@
+---
+const variants = {
+    primary: "bg-linear-180 from-[#FF7A00] to-orange-600 text-white",
+    ghost: "bg-linear-180 from-white to-slate-100 text-slate-900",
+};
+
+const {
+    as = "button",
+    href,
+    variant = "primary",
+    class: className,
+    ...rest
+} = Astro.props as {
+    as?: string;
+    href?: string;
+    variant?: keyof typeof variants;
+    class?: string;
+    [key: string]: any;
+};
+
+const Tag = as as any;
+---
+
+<Tag
+    href={href}
+    class:list={[
+        "flex justify-between items-center gap-5 px-4 py-2 rounded-lg cursor-pointer font-bold border border-slate-600/60 drop-shadow-2xl",
+        variants[variant],
+        className,
+    ]}
+    {...rest}
+>
+    <slot name="icon" />
+    <slot />
+</Tag>

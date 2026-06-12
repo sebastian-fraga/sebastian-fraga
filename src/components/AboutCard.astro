@@ -1,0 +1,204 @@
+---
+import SpotifyCard from "./SpotifyCard.astro";
+
+import MailIcon from "./icons/MailIcon.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
+import PinIcon from "./icons/PinIcon.astro";
+import WorkIcon from "./icons/WorkIcon.astro";
+import LangIcon from "./icons/LangIcon.astro";
+
+const skillCategories = [
+    {
+        name: "Front-End",
+        skills: [
+            { name: "HTML", icon: "/about/icons/html.svg" },
+            { name: "CSS", icon: "/about/icons/css.svg" },
+            { name: "JavaScript", icon: "/about/icons/javascript.svg" },
+            { name: "TypeScript", icon: "/about/icons/typescript.svg" },
+            { name: "Astro", icon: "/about/icons/astro.svg" },
+            { name: "React", icon: "/about/icons/react.svg" },
+            { name: "Tailwind", icon: "/about/icons/tailwind.svg" },
+        ],
+    },
+    {
+        name: "Mobile",
+        skills: [
+            { name: "React Native", icon: "/about/icons/react.svg" },
+            { name: "Android Studio", icon: "/about/icons/androidstudio.svg" },
+            { name: "Capacitor", icon: "/about/icons/capacitor.svg" },
+            { name: "Apache Cordova", icon: "/about/icons/cordova.svg" },
+        ],
+    },
+    {
+        name: "Back-End",
+        skills: [
+            { name: "Node.js", icon: "/about/icons/nodejs.svg" },
+            { name: "Firebase", icon: "/about/icons/firebase.svg" },
+            { name: "MongoDB", icon: "/about/icons/mongodb.svg" },
+        ],
+    },
+    {
+        name: "Cloud y Deployment",
+        skills: [
+            { name: "Amazon Web Services", icon: "/about/icons/aws.svg" },
+            { name: "Vercel", icon: "/about/icons/vercel.svg" },
+            { name: "Netlify", icon: "/about/icons/netlify.svg" },
+            { name: "Google Cloud", icon: "/about/icons/googlecloud.svg" },
+        ],
+    },
+    {
+        name: "Diseño",
+        skills: [
+            { name: "Figma", icon: "/about/icons/figma.svg" },
+            { name: "Adobe Photoshop", icon: "/about/icons/photoshop.svg" },
+            { name: "Adobe Illustrator", icon: "/about/icons/illustrator.svg" },
+            { name: "Inkscape", icon: "/about/icons/inkscape.svg" },
+            { name: "Aseprite", icon: "/about/icons/aseprite.svg" },
+            { name: "Canva", icon: "/about/icons/canva.svg" },
+        ],
+    },
+    {
+        name: "Otros",
+        skills: [
+            { name: "Visual Studio Code", icon: "/about/icons/vscode.svg" },
+            { name: "Git", icon: "/about/icons/git.svg" },
+            { name: "GitHub", icon: "/about/icons/github.svg" },
+            { name: "Powershell", icon: "/about/icons/powershell.svg" },
+            { name: "NPM", icon: "/about/icons/npm.svg" },
+            { name: "PNPM", icon: "/about/icons/pnpm.svg" },
+            { name: "Notion", icon: "/about/icons/notion.svg" },
+        ],
+    },
+];
+---
+
+<div
+    class="bg-linear-180 from-[#F3A864] to-[#8D623A] rounded-3xl grid grid-cols-[1fr_2fr] gap-x-0 drop-shadow-2xl w-250 h-145"
+>
+    <aside class="px-6 pt-10 pb-5 flex flex-col justify-between items-center">
+        <div class="flex flex-col items-center gap-5">
+            <div class="w-37 h-37 rounded-2xl border drop-shadow-3xl">
+                <img
+                    src=""
+                    alt=""
+                    width="148"
+                    height="148"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+            <div class="flex items-center gap-4">
+                <a
+                    href="https://github.com/sebastian-fraga"
+                    class="bg-red-50 px-6 py-2.5 rounded-lg outline outline-black drop-shadow-xl transition-all hover:bg-amber-100 hover:outline-2 hover:outline-black"
+                >
+                    <GithubIcon />
+                </a>
+                <a
+                    href="mailto:fragasebastian1@gmail.com"
+                    class="bg-red-50 px-6 py-2.5 rounded-lg outline outline-black drop-shadow-xl transition-all hover:bg-amber-100 hover:outline-2 hover:outline-black"
+                >
+                    <MailIcon />
+                </a>
+            </div>
+        </div>
+        <ul
+            class="flex flex-col gap-3 bg-amber-100 p-5 rounded-3xl drop-shadow-xl"
+        >
+            <li class="flex items-center gap-2">
+                <PinIcon />
+                <span class="font-light text-sm">Buenos Aires</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <WorkIcon />
+                <span class="font-light text-sm">Disponible para trabajar</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <LangIcon />
+                <span class="font-light text-sm">Español / English</span>
+            </li>
+        </ul>
+        <SpotifyCard />
+    </aside>
+    <div
+        class="bg-linear-180 from-[#797979] to-[#373737] rounded-3xl pl-9 py-5 overflow-y-hidden text-slate-50"
+    >
+        <div class="h-full overflow-y-scroll custom-scroll pt-4 pr-6">
+            <div class="flex flex-col gap-12">
+                <div class="flex flex-col gap-6">
+                    <h3 class="font-semibold text-3xl">¿Quién soy?</h3>
+                    <p class="font-medium text-xl ml-4 text-gray-200">
+                        Mi nombre es Sebastián Fraga. Soy un desarrollador
+                        front-end autodidacta oriundo de Buenos Aires,
+                        Argentina.
+                    </p>
+                    <p class="font-medium text-xl ml-4 text-gray-200">
+                        Me caracterizo por realizar experiencias web con
+                        atención al detalle y un buen uso del UI y UX.
+                    </p>
+                    <p class="font-medium text-xl ml-4 text-gray-200">
+                        Actualmente tengo 23 años y sigo estudiando y
+                        aprendiendo todos los días.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <h3 class="font-semibold text-3xl">Habilidades</h3>
+
+                    {
+                        skillCategories.map((category) => (
+                            <div class="flex flex-col gap-3">
+                                <h4 class="text-xl font-medium">
+                                    {category.name}
+                                </h4>
+
+                                <div class="flex flex-wrap gap-3">
+                                    {category.skills.map((skill) => (
+                                        <div
+                                            class="flex items-center justify-center w-14 h-14 rounded-xl bg-linear-180 from-slate-500 to-slate-600 border border-slate-700/90 drop-shadow-xl"
+                                            title={skill.name}
+                                        >
+                                            <img
+                                                src={skill.icon}
+                                                alt={skill.name}
+                                                class="w-8 h-8"
+                                                width="32"
+                                                height="32"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .custom-scroll {
+        --sb-track-color: #232e33;
+        --sb-thumb-color: #ff7a00;
+        --sb-size: 8px;
+    }
+
+    .custom-scroll::-webkit-scrollbar {
+        width: var(--sb-size);
+    }
+
+    .custom-scroll::-webkit-scrollbar-track {
+        background: var(--sb-track-color);
+        border-radius: 3px;
+    }
+
+    .custom-scroll::-webkit-scrollbar-thumb {
+        background: var(--sb-thumb-color);
+        border-radius: 3px;
+    }
+
+    @supports not selector(::-webkit-scrollbar) {
+        .custom-scroll {
+            scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+        }
+    }
+</style>

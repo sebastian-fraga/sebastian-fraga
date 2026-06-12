@@ -1,0 +1,49 @@
+---
+import DownIcon from "../components/icons/DownIcon.astro";
+---
+
+<div class="flex flex-col items-center justify-between min-h-screen py-12">
+    <div></div>
+
+    <div class="flex flex-col items-center">
+        <img
+            class="rounded-[50px] w-50 h-50 mb-8 border-2 border-amber-50/20"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png"
+            alt="Imagen de Sebastián Fraga"
+        />
+        <h1 class="text-8xl text-slate-50 font-bold">Sebastián Fraga</h1>
+        <p class="text-3xl text-white font-medium mb-4">
+            Desarrollador web Front-end
+        </p>
+        <p class="text-xl text-slate-300 font-medium">
+            Especializado en
+            <span class="text-orange-300/90">Astro</span> ·
+            <span class="text-cyan-300/90">React</span> ·
+            <span class="text-blue-300/90">Tailwind</span>
+        </p>
+    </div>
+
+    <div class="text-white/70 animate-bounce hover:text-white transition-colors">
+        <a href="#projects">
+            <DownIcon />
+        </a>
+    </div>
+</div>
+
+<style>
+    h1,
+    p {
+        animation: fadeIn 0.8s forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            transform: translateY(-40%);
+            opacity: 0.2;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+</style>

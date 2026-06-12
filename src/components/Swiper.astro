@@ -1,0 +1,102 @@
+---
+import LeftIcon from "./icons/LeftIcon.astro";
+import RightIcon from "./icons/RightIcon.astro";
+---
+
+<div class="relative w-150">
+    <div
+        class="swiper w-full h-full rounded-2xl border-3 border-black drop-shadow-2xl"
+    >
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <button
+        class="left-arrow absolute -left-12 top-1/2 -translate-y-1/2 z-10 text-white drop-shadow-lg hover:text-[#fecc9e] active:text-[#ffad60] transition-colors cursor-pointer"
+    >
+        <LeftIcon />
+    </button>
+    <button
+        class="right-arrow absolute -right-12 top-1/2 -translate-y-1/2 z-10 text-white drop-shadow-lg hover:text-[#fecc9e] active:text-[#ffad60] transition-colors cursor-pointer"
+    >
+        <RightIcon />
+    </button>
+</div>
+
+<style>
+    :root {
+        --swiper-theme-color: #fff !important;
+        --swiper-pagination-bullet-inactive-color: #ffffffaa !important;
+    }
+    .swiper {
+        aspect-ratio: 16/9 !important;
+        margin-inline: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        cursor: grab;
+
+        &:active {
+            cursor: grabbing;
+        }
+    }
+
+    .swiper-slide {
+        height: 100% !important;
+    }
+
+    .swiper-pagination-bullets {
+        bottom: 5px !important;
+        width: 50% !important;
+        transform: translateX(50%) !important;
+        border-radius: 12px;
+        background: #000000aa;
+        backdrop-filter: blur(3px);
+    }
+
+    :global(.swiper-slide) {
+        position: relative;
+        overflow: hidden;
+    }
+
+    :global(.swiper-slide img) {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    :global(.swiper-slide)::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--slide-bg);
+        background-size: cover;
+        background-position: center;
+        filter: blur(20px) brightness(0.7);
+        z-index: 0;
+    }
+</style>
+
+<script>
+    import Swiper from "swiper";
+    import { Navigation, Pagination } from "swiper/modules";
+    import "swiper/css";
+    import "swiper/css/navigation";
+    import "swiper/css/pagination";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        new Swiper(".swiper", {
+            modules: [Navigation, Pagination],
+            navigation: {
+                prevEl: document.querySelector(".left-arrow"),
+                nextEl: document.querySelector(".right-arrow"),
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    });
+</script>

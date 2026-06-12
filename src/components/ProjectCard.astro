@@ -1,0 +1,73 @@
+---
+interface Props {
+    name: string;
+    logo: string;
+    nameStyle?: string;
+    fontUrl?: string;
+    screenshots?: string[];
+    text1?: string;
+    text2?: string;
+    text3?: string;
+    description: string;
+    year?: string;
+    status?: string;
+    image: string;
+    alt: string;
+    url: string;
+    urlLabel?: string;
+    repo: string;
+    stack: string[];
+    gradientFrom: string;
+    gradientTo: string;
+}
+
+const {
+    name,
+    logo,
+    nameStyle,
+    fontUrl,
+    screenshots,
+    text1,
+    text2,
+    text3,
+    description,
+    year,
+    status,
+    image,
+    alt,
+    url,
+    urlLabel,
+    repo,
+    stack,
+    gradientFrom,
+    gradientTo,
+} = Astro.props;
+---
+
+<article
+    class="rounded-2xl border-2 border-amber-50/80 w-190 aspect-video relative hover:scale-102 cursor-pointer transition-all"
+    data-name={name}
+    data-name-style={nameStyle}
+    data-font-url={fontUrl}
+    data-screenshots={JSON.stringify(screenshots)}
+    data-text1={text1}
+    data-text2={text2}
+    data-text3={text3}
+    data-description={description}
+    data-year={year}
+    data-status={status}
+    data-url={url}
+    data-url-label={urlLabel}
+    data-repo={repo}
+    data-gradient-from={gradientFrom}
+    data-gradient-to={gradientTo}
+    data-logo={logo}
+    data-stack={JSON.stringify(stack)}
+>
+    <img class="rounded-[14px]" src={image} alt={alt} loading="lazy" />
+    <p
+        class="absolute bottom-0 py-3 w-full text-center text-2xl bg-slate-200/30 backdrop-blur-2xl border-t-2 border-amber-50/30 rounded-b-2xl text-slate-100 font-bold"
+    >
+        {name}
+    </p>
+</article>

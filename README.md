@@ -1,46 +1,76 @@
-# Astro Starter Kit: Basics
+<div align="center">
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+  <h2>Sebastián Fraga</h2>
+  <p>Front-end developer · Building fast and polished digital experiences</p>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Since 2024](https://img.shields.io/badge/Since%202024-Building%20with%20%E2%9D%A4%EF%B8%8F-8A2BE2?style=flat-square)
+&nbsp;
+![Visitors](https://komarev.com/ghpvc/?username=sebastian-fraga&color=8A2BE2&style=flat-square)
 
-## 🚀 Project Structure
+  <br/>
 
-Inside of your Astro project, you'll see the following folders and files:
+[![Spotify](https://spotify-github-profile.kittinanx.com/api/view.svg?uid=31urbx5k2xompmhwj2qaiajwobpu&theme=natemoo-re)](https://open.spotify.com/user/31urbx5k2xompmhwj2qaiajwobpu)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+</div>
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+I'm a **front-end developer** focused on modern web experiences, with an eye for **polished interfaces and attention to detail**. I also build **mobile apps** with React Native. When I'm not coding, I'm usually listening to music, watching '90s movies, or drinking some coffee ☕
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+### 🛠️ Tech stack
 
-## 👀 Want to learn more?
+**Front-end**
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,astro,react,tailwind,vite" />
+</p>
+
+**Mobile**
+
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=react,gradle,androidstudio" />
+</p>
+
+**Backend & Cloud**
+
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=nodejs,firebase,mongodb,aws,vercel,netlify" />
+</p>
+
+**Design & Tools**
+
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=figma,ps,illustrator" />
+</p>
+
+**Others**
+
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=vscode,git,github,powershell,npm,notion,windows" />
+</p>
+
+---
+
+### ⭐ Featured project
+
+**Vice Club** — Modern GTA-inspired community platform built with Astro, vanilla components, and interactive UI systems.
+
+[![Visit Website](https://img.shields.io/badge/Visit%20Website-8A2BE2?style=for-the-badge&logoColor=white)](https://viceclub.app)
+[![View Source](https://img.shields.io/badge/View%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sebastian-fraga/viceclub)
+
+---
+
+### 🌐 Let's connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/sebasti%C3%A1n-fraga-b1131b24a)
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:fragasebastian1@gmail.com)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/T6T71RM9WX)
+
+---
+
+<div align="center">
+  <sub>Thanks for visiting! If you like my work, feel free to ⭐ my repos.<br/>
+  Found a bug or have a suggestion? Open an issue. Feedback is always welcome :)</sub>
+</div>

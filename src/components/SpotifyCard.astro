@@ -1,0 +1,66 @@
+---
+import SpotifyIcon from "./icons/SpotifyIcon.astro";
+---
+
+<div
+    id="spotify-card"
+    class="grid grid-cols-[auto_1fr_auto] gap-3 px-3 items-center bg-slate-950 rounded-xl w-full text-slate-50"
+>
+    <div>
+        <SpotifyIcon />
+    </div>
+    <div class="flex flex-col py-2 min-w-0">
+        <p id="spotify-title" class="font-bold text-md truncate">Cargando...</p>
+        <span
+            id="spotify-artist"
+            class="font-light text-xs text-slate-400 truncate"></span>
+    </div>
+    <div id="spotify-eq" class="hidden items-end gap-0.75 h-5">
+        <span
+            class="w-1 h-2 bg-green-400 rounded-sm origin-bottom"
+            style="animation: eq 0.7s ease-in-out infinite 0s;"></span>
+        <span
+            class="w-1 h-4 bg-green-400 rounded-sm origin-bottom"
+            style="animation: eq 0.9s ease-in-out infinite 0.15s;"></span>
+        <span
+            class="w-1 h-3 bg-green-400 rounded-sm origin-bottom"
+            style="animation: eq 0.6s ease-in-out infinite 0.3s;"></span>
+    </div>
+</div>
+
+<script>
+    fetch("/api/spotify")
+        .then((res) => {
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const contentType = res.headers.get("content-type");
+            if (!contentType?.includes("application/json"))
+                throw new Error("Not JSON");
+            return res.json();
+        })
+        .then((song) => {
+            document.getElementById("spotify-title")!.textContent = song.title;
+            document.getElementById("spotify-artist")!.textContent =
+                song.artist;
+            if (song.isPlaying) {
+                const eq = document.getElementById("spotify-eq")!;
+                eq.classList.remove("hidden");
+                eq.classList.add("flex");
+            }
+        })
+        .catch(() => {
+            document.getElementById("spotify-title")!.textContent =
+                "No disponible";
+        });
+</script>
+
+<style>
+    @keyframes eq {
+        0%,
+        100% {
+            transform: scaleY(0.3);
+        }
+        50% {
+            transform: scaleY(1);
+        }
+    }
+</style>

@@ -1,0 +1,455 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+import Swiper from "../components/Swiper.astro";
+import Button from "../components/Button.astro";
+
+import CloseIcon from "../components/icons/CloseIcon.astro";
+import CalendarIcon from "../components/icons/CalendarIcon.astro";
+import StatusIcon from "../components/icons/StatusIcon.astro";
+import ExternalIcon from "../components/icons/ExternalIcon.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+
+const projects = [
+    {
+        image: "/projects/viceclub.webp",
+        alt: "Captura de Vice Club",
+        gradientFrom: "#8F7EDD",
+        gradientTo: "#F9C9F0",
+        screenshots: [
+            "/projects/viceclub/1.webp",
+            "/projects/viceclub/2.webp",
+            "/projects/viceclub/3.webp",
+            "/projects/viceclub/4.webp",
+            "/projects/viceclub/5.webp",
+        ],
+        text1: "Mi primer gran proyecto. Se trata de una wiki con información, guías y herramientas para cada uno de los juegos principales de la <b>saga Grand Theft Auto</b>. El sitio utiliza rutas dinámicas para reutilizar contenido y mantener una estructura consistente entre todas las secciones.",
+        text2: "Originalmente comenzó como un proyecto desarrollado con HTML, CSS y JavaScript vanilla. Sin embargo, a medida que la cantidad de páginas crecía, decidí <b>migrarlo a Astro</b> para mejorar la mantenibilidad, la reutilización de componentes y la experiencia de desarrollo.",
+        text3: "Actualmente cuenta con <b>dominio propio</b>, despliegue en Vercel y recibe cerca de <b>50 visitas mensuales</b> provenientes principalmente de usuarios de Latinoamérica.",
+        name: "Vice Club",
+        nameStyle:
+            "font-family: 'Alfa Slab One', sans-serif; color: #4d9eff; text-transform: uppercase; -webkit-text-stroke: 2px rgba(0, 0, 0, 0.698)",
+        fontUrl:
+            "https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap",
+        description: "El sitio web ideal para los fanáticos de la saga GTA",
+        year: "Nov. 2025 — Ahora",
+        status: "En desarrollo",
+        stack: [
+            "Astro",
+            "CSS",
+            "JavaScript",
+            "JSON",
+            "AWS",
+            "Vercel",
+            "Inkscape",
+        ],
+        logo: "/projects/viceclub/logo.webp",
+        url: "https://viceclub.app",
+        repo: "https://github.com/sebastian-fraga/viceclub",
+    },
+    {
+        image: "/projects/gabba.webp",
+        alt: "Captura de Gabba",
+        gradientFrom: "#94b88c",
+        gradientTo: "#5ca34b",
+        screenshots: [
+            "/projects/gabba/1.webp",
+            "/projects/gabba/2.webp",
+            "/projects/gabba/3.webp",
+            "/projects/gabba/4.webp",
+            "/projects/gabba/5.webp",
+        ],
+        text1: "Aplicación móvil desarrollada con React y empaquetada para Android mediante Capacitor. Utiliza React Router para gestionar la navegación entre pantallas e integra notificaciones push a través de Firebase Cloud Messaging (FCM).",
+        text2: "Gabba es una aplicación que centraliza la información de los videos y programas de Gabba Gabba Radio y Gabba Gabba Live, además de brindar acceso a la información de eventos relacionados con la Gabba Gabba Fest",
+        text3: "Actualmente se encuentra publicada en Google Play, donde cuenta con más de 50 descargas y una valoración promedio de 5 estrellas.",
+        name: "Gabba",
+        nameStyle:
+            "font-family: 'Inter', sans-serif; text-transform: uppercase; color: #AFFC41; font-weight: 900",
+        fontUrl: "https://fonts.googleapis.com/css2?family=Inter&display=swap",
+        description: "App ramonera",
+        year: "Nov. 2025 — Ene. 2026",
+        status: "Publicada",
+        stack: [
+            "React",
+            "Tailwind",
+            "JavaScript",
+            "JSON",
+            "AWS",
+            "Admob",
+            "Firebase",
+            "Capacitor",
+        ],
+        logo: "/projects/gabba/logo.webp",
+        url: "https://play.google.com/store/apps/details?id=com.gabba.app",
+        urlLabel: "Descargar en Google Play",
+        repo: "https://github.com/sebastian-fraga/gabba",
+    },
+    {
+        image: "/projects/sebaweather.webp",
+        alt: "Captura de SebaWeather",
+        gradientFrom: "#B884B0",
+        gradientTo: "#6493ed",
+        screenshots: [
+            "/projects/sebaweather/1.webp",
+            "/projects/sebaweather/2.webp",
+        ],
+        text1: "Aplicación web para consultar el pronóstico del clima en cualquier ubicación del mundo.",
+        text2: "Integra la API gratuita de WeatherAPI para mostrar el pronóstico de las próximas 4 horas y los 2 días siguientes. Permite también guardar ciudades en favoritos mediante localStorage.",
+        name: "SebaWeather",
+        nameStyle:
+            "font-family: 'Inter', sans-serif; color: #f2f2f2; font-weight: 900",
+        fontUrl: "https://fonts.googleapis.com/css2?family=Inter&display=swap",
+        description: "Pronóstico del tiempo",
+        year: "Oct. 2025",
+        status: "Publicada",
+        stack: ["HTML", "CSS", "JavaScript", "API"],
+        logo: "/projects/sebaweather/logo.webp",
+        url: "https://sebaweather.vercel.app/",
+        repo: "https://github.com/sebastian-fraga/sebaweather",
+    },
+    {
+        image: "/projects/passwordgenerator.webp",
+        alt: "Captura de Password Generator",
+        gradientFrom: "#87acc7",
+        gradientTo: "#837ba8",
+        screenshots: ["/projects/passwordgenerator/1.webp"],
+        text1: "Una pequeña aplicación web que genera contraseñas seguras de forma automática mediante diversas opciones de personalización.",
+        text2: "Permite ajustar la longitud y elegir el uso de mayúsculas, números y caracteres especiales para luego copiar el resultado al portapapeles con un solo click.",
+        name: "Password Generator",
+        nameStyle:
+            "font-family: 'Inter', sans-serif; color: oklch(98.4% 0.003 247.858); font-weight: 900",
+        fontUrl: "https://fonts.googleapis.com/css2?family=Inter&display=swap",
+        description: "Generador de contraseñas",
+        year: "Sep. 2025",
+        status: "Publicada",
+        stack: ["React", "Tailwind", "JavaScript"],
+        logo: "/projects/passwordgenerator/logo.webp",
+        url: "https://password-generator-chi-lovat.vercel.app/",
+        repo: "https://github.com/sebastian-fraga/password-generator",
+    },
+];
+---
+
+<div
+    class="flex flex-col items-center justify-center min-h-screen py-12 relative"
+>
+    <h2 class="font-bold text-slate-50 text-6xl py-12 ">Proyectos destacados</h2>
+    <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-950/60 -z-10 rounded-full w-225 h-225"
+        style="filter: blur(120px)"
+    >
+    </div>
+
+    <div class="grid grid-cols-2 gap-x-12 gap-y-10 relative ">
+        {projects.map((project) => <ProjectCard {...project} />)}
+    </div>
+
+    <dialog
+        id="project-dialog"
+        class="fixed mx-auto my-auto rounded-2xl border-2 border-black/95 py-4 w-290 h-140 drop-shadow-2xl transition-all overflow-hidden"
+    >
+        <div
+            id="dialog-gradient"
+            class="rounded-xl absolute inset-0 h-full -z-10"
+        >
+        </div>
+        <div class="grid grid-cols-[2fr_1fr] h-full pl-5 relative">
+            <div class="flex flex-col items-center gap-4 px-12 h-full min-h-0">
+                <div class="rounded-2xl mt-8 mx-auto shrink-0">
+                    <Swiper />
+                </div>
+
+                <div
+                    class="scroll-text flex-1 min-h-0 overflow-y-auto pr-2 py-5 flex flex-col gap-4 font-medium text-md/7 max-w-[60ch]"
+                >
+                    <p
+                        id="dialog-text-1"
+                        class="text-lg/7 font-medium text-slate-900"
+                    >
+                    </p>
+                    <p
+                        id="dialog-text-2"
+                        class="text-md/7 font-medium text-slate-800"
+                    >
+                    </p>
+                    <p
+                        id="dialog-text-3"
+                        class="text-md/7 font-medium text-slate-800"
+                    >
+                    </p>
+                </div>
+            </div>
+            <aside class="flex flex-col relative h-full pl-7 pr-3">
+                <div class="aside-header relative mt-8 pb-3">
+                    <h2 class="text-4xl text-start mb-2" id="dialog-name"></h2>
+                    <p
+                        class="text-sm max-w-prose text-gray-700 text-pretty text-start italic"
+                        id="dialog-description"
+                    >
+                    </p>
+                </div>
+                <div
+                    class="flex items-center justify-center gap-6 mt-2 py-4 border-y border-black/10"
+                >
+                    <div class="flex items-center gap-0.5">
+                        <CalendarIcon />
+                        <span class="text-sm font-medium" id="dialog-year"
+                        ></span>
+                    </div>
+
+                    <div class="flex items-center gap-0.5">
+                        <StatusIcon class="text-green-500" />
+                        <span class="text-sm font-medium" id="dialog-status"
+                        ></span>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1 mt-3 z-10">
+                    <h3 class="text-xl font-semibold mb-2">TECNOLOGÍAS</h3>
+                    <div
+                        class="grid grid-cols-3 gap-y-2 gap-x-1 mb-4"
+                        id="dialog-stack"
+                    >
+                    </div>
+
+                    <div class="flex flex-col w-full gap-2 mt-auto pb-7 z-10">
+                        <Button as="a" id="dialog-url" variant="primary">
+                            <ExternalIcon slot="icon" />
+                            <span id="dialog-url-label">Visitar página</span>
+                            <div></div>
+                        </Button>
+
+                        <Button as="a" id="dialog-repo" variant="ghost">
+                            <GithubIcon slot="icon" />
+                            Ver código
+                            <div></div>
+                        </Button>
+                    </div>
+                </div>
+                <img
+                    id="dialog-aside-logo"
+                    src=""
+                    alt=""
+                    class="absolute bottom-0 right-0 w-64 h-64 object-contain opacity-5 pointer-events-none select-none z-0"
+                />
+            </aside>
+            <div
+                class="absolute top-0 right-3.5 text-gray-600/70 hover:text-red-500/50 transition-colors cursor-pointer"
+                id="closeBtn"
+            >
+                <CloseIcon />
+            </div>
+        </div>
+    </dialog>
+</div>
+
+<style>
+    .scroll-text {
+        --sb-track-color: transparent;
+        --sb-thumb-color: #ff7b00;
+        --sb-size: 5px;
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 8%,
+            black 92%,
+            transparent 100%
+        );
+        -webkit-mask-attachment: local;
+        mask-attachment: local;
+    }
+
+    .scroll-text::-webkit-scrollbar {
+        width: var(--sb-size);
+    }
+
+    .scroll-text::-webkit-scrollbar-track {
+        background: var(--sb-track-color);
+        border-radius: 3px;
+    }
+
+    .scroll-text::-webkit-scrollbar-thumb {
+        background: var(--sb-thumb-color);
+        border-radius: 3px;
+    }
+
+    @supports not selector(::-webkit-scrollbar) {
+        .scroll-text {
+            scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+        }
+    }
+
+    dialog {
+        opacity: 0;
+        transform: scale(0.95) translateY(8px);
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            display 0.25s allow-discrete,
+            overlay 0.25s allow-discrete;
+    }
+
+    dialog[open] {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    @starting-style {
+        dialog[open] {
+            opacity: 0;
+            transform: scale(0.95) translateY(8px);
+        }
+    }
+
+    dialog::backdrop {
+        background: transparent;
+        backdrop-filter: blur(0px) brightness(1);
+        transition:
+            background 0.25s ease,
+            backdrop-filter 0.25s ease,
+            overlay 0.25s allow-discrete,
+            display 0.25s allow-discrete;
+    }
+
+    dialog[open]::backdrop {
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(6px) brightness(0.6);
+    }
+
+    @starting-style {
+        dialog[open]::backdrop {
+            background: transparent;
+            backdrop-filter: blur(0px) brightness(1);
+        }
+    }
+
+    aside::before {
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        background: #00000038;
+        width: 1px;
+        height: 100%;
+    }
+</style>
+
+<script>
+    const dialog = document.getElementById(
+        "project-dialog",
+    ) as HTMLDialogElement;
+    const cards = document.querySelectorAll("article[data-name]");
+    const closeBtn = document.getElementById("closeBtn");
+
+    dialog.addEventListener("click", (e) => {
+        if (e.target === dialog) {
+            dialog.close();
+        }
+    });
+
+    closeBtn?.addEventListener("click", () => {
+        dialog.close();
+    });
+
+    dialog.addEventListener("close", () => {
+        document.body.style.overflow = "";
+    });
+
+    cards.forEach((card) => {
+        card.addEventListener("click", () => {
+            const {
+                screenshots,
+                text1,
+                text2,
+                text3,
+                logo,
+                name,
+                description,
+                year,
+                status,
+                url,
+                urlLabel,
+                repo,
+                gradientFrom,
+                gradientTo,
+                stack,
+                nameStyle,
+                fontUrl,
+            } = (card as HTMLElement).dataset;
+
+            const scrollText = document.querySelector(
+                ".scroll-text",
+            ) as HTMLElement;
+            scrollText.style.setProperty("--sb-thumb-color", gradientFrom!);
+
+            if (fontUrl && !document.querySelector(`link[href="${fontUrl}"]`)) {
+                const link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = fontUrl;
+                document.head.appendChild(link);
+            }
+
+            const swiperWrapper = document.querySelector(".swiper-wrapper")!;
+            swiperWrapper.innerHTML = "";
+
+            JSON.parse(screenshots!).forEach((src: string) => {
+                const slide = document.createElement("div");
+                slide.className = "swiper-slide";
+                slide.innerHTML = `<img src="${src}" alt="" />`;
+
+                swiperWrapper.appendChild(slide);
+            });
+
+            document.getElementById("dialog-text-1")!.innerHTML = text1 ?? "";
+            document.getElementById("dialog-text-2")!.innerHTML = text2 ?? "";
+            document.getElementById("dialog-text-3")!.innerHTML = text3 ?? "";
+
+            document.getElementById("dialog-year")!.textContent = year!;
+            document.getElementById("dialog-status")!.textContent = status!;
+
+            const dialogName = document.getElementById("dialog-name")!;
+            dialogName.textContent = name!;
+            dialogName.style.cssText = nameStyle ?? "";
+
+            const asideLogo = document.getElementById(
+                "dialog-aside-logo",
+            ) as HTMLImageElement;
+            asideLogo.src = logo ?? "";
+            asideLogo.style.display = logo ? "block" : "none";
+
+            document.getElementById("dialog-description")!.textContent =
+                description!;
+
+            document.getElementById("dialog-url-label")!.textContent =
+                urlLabel ?? "Visitar página";
+            (document.getElementById("dialog-url") as HTMLAnchorElement).href =
+                url!;
+            (document.getElementById("dialog-repo") as HTMLAnchorElement).href =
+                repo!;
+            document.getElementById("dialog-gradient")!.style.background =
+                `linear-gradient(135deg, ${gradientFrom}, ${gradientTo})`;
+
+            const stackContainer = document.getElementById("dialog-stack")!;
+            stackContainer.innerHTML = "";
+
+            JSON.parse(stack!).forEach((tech: string) => {
+                const badge = document.createElement("div");
+                badge.className =
+                    "flex items-center gap-x-2 rounded-md bg-black/15 backdrop-blur-sm px-3 py-2 border-1 border-black/10";
+                badge.innerHTML = `
+                <img src="/projects/icons/${tech.toLowerCase()}.svg" alt="${tech}" width="16" height="16" class="shrink-0 invert"/>
+                <span class="font-thin text-sm text-slate-50">${tech}</span>
+            `;
+                stackContainer.appendChild(badge);
+            });
+
+            dialog.showModal();
+            document.body.style.overflow = "hidden";
+        });
+    });
+</script>

@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Figtree Variable', sans-serif;
+}
+
+.scroll-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1),
+        transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.scroll-fade-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-blur {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(0.95);
+    transition: opacity 1s ease-out, filter 1s ease-out, transform 1.0s ease-out;
+}
+
+.scroll-seen {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+    filter: blur(0);
+}

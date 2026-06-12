@@ -1,0 +1,105 @@
+---
+import SunIcon from "./icons/SunIcon.astro";
+import LangIcon from "./icons/LangIcon.astro";
+---
+
+<header
+    class="flex h-25 mt-3 px-11 justify-between items-center w-[80vw] mx-auto border-2 border-slate-300/40 rounded-[38px] bg-slate-300/30 absolute top-8 left-0 right-0 backdrop-blur-2xl backdrop-brightness-50 z-100"
+>
+    <span class="font-bold text-4xl text-white">Sebastián Fraga</span>
+    <div class="flex gap-6.5">
+        <nav class="flex gap-6 text-1xl text-white">
+            <a href="#home">Inicio</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#about">Sobre mí</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+        <div class="flex gap-5 text-white">
+            <button id="appearanceToggle" class="cursor-not-allowed">
+                <SunIcon />
+            </button>
+            <button id="langToggle" class="cursor-not-allowed">
+                <LangIcon />
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+    header {
+        opacity: 0;
+        pointer-events: none;
+
+        &.animated {
+            animation: slideDown 0.35s ease-out;
+        }
+
+        &.is-sticky {
+            position: fixed;
+            top: 2rem;
+            left: 0;
+            right: 0;
+            width: 80vw;
+            margin: 0 auto;
+            transition: opacity 0.2s ease;
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+    nav a:not(.active) {
+        font-weight: 100;
+        transition: all 0.4s ease-out;
+
+        &:hover {
+            color: #ffcea2;
+        }
+    }
+
+    nav a.active {
+        color: #ffcea2;
+        font-weight: 600;
+        transition: all 0.4s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<script>
+    const header = document.querySelector("header");
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 100) {
+            header?.classList.add("is-sticky");
+            header?.classList.add("animated"); 
+        } else {
+            header?.classList.remove("is-sticky");
+        }
+    });
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                const link = document.querySelector(
+                    `nav  a[href="#${entry.target.id}"]`,
+                );
+                if (entry.isIntersecting) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    link?.classList.add("active");
+                }
+            });
+        },
+        { threshold: 0.5 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+</script>
