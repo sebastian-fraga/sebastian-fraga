@@ -1,15 +1,16 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+import vercel from "@astrojs/vercel";
 
-import tailwindcss from '@tailwindcss/vite';
-
-
-// https://astro.build/config
 export default defineConfig({
+  adapter: vercel(),
+  output: "server",
+
   vite: {
     server: {
-      allowedHosts: ['tephritic-mari-breezy.ngrok-free.dev']
+      allowedHosts: ["tephritic-mari-breezy.ngrok-free.dev"],
     },
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
 });
