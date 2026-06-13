@@ -46,12 +46,13 @@ export const showToast = (type: 'success' | 'error', message: string): void => {
         fontFamily: 'system-ui, sans-serif',
         fontSize: '14px',
         fontWeight: '500',
-        alignItems: 'center',     
-        gap: '10px',              
+        alignItems: 'center',
+        gap: '10px',
         pointerEvents: 'auto',
         opacity: '0',
         transform: 'translateY(20px)',
         transition: 'all 0.3s ease',
+        display: 'flex',
     });
 
     const iconSvg = type === 'success' ? successIcon : errorIcon;

@@ -1,5 +1,3 @@
-
-
 <div
     class="bg-linear-135 from-[#F4AC46] to-[#462e17]
     rounded-3xl
@@ -151,10 +149,12 @@
     }
 </style>
 
-<script type="module">
-    import { showToast } from "/src/scripts/toast";
+<script>
+    import { showToast } from "../scripts/toast";
 
-    const form = document.getElementById("contactForm");
+    const form = document.getElementById(
+        "contactForm",
+    ) as HTMLFormElement | null;
 
     form?.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -170,15 +170,14 @@
                 body: JSON.stringify(Object.fromEntries(formData)),
             });
 
-            if (!response.ok) {
-                throw new Error();
-            }
+            if (!response.ok) throw new Error();
 
             form.reset();
-
             showToast("success", "Mensaje enviado correctamente");
         } catch {
             showToast("error", "Error al enviar el mensaje");
         }
     });
+
+    (window as any).showToast = showToast;
 </script>
