@@ -211,13 +211,13 @@ const projects = [
                     </div>
 
                     <div class="flex flex-col w-full gap-2 mt-auto pb-7 z-10">
-                        <Button as="a" id="dialog-url" variant="primary">
+                        <Button as="a" id="dialog-url" variant="primary" target="_blank" rel="noopener noreferrer">
                             <ExternalIcon slot="icon" />
                             <span id="dialog-url-label">Visitar página</span>
                             <div></div>
                         </Button>
 
-                        <Button as="a" id="dialog-repo" variant="ghost">
+                        <Button as="a" id="dialog-repo" variant="ghost" target="_blank" rel="noopener noreferrer">
                             <GithubIcon slot="icon" />
                             Ver código
                             <div></div>
@@ -229,6 +229,7 @@ const projects = [
                     src=""
                     alt=""
                     class="absolute bottom-0 right-0 w-64 h-64 object-contain opacity-5 pointer-events-none select-none z-0"
+                    loading="lazy"
                 />
             </aside>
             <div
@@ -400,7 +401,7 @@ const projects = [
             JSON.parse(screenshots!).forEach((src: string) => {
                 const slide = document.createElement("div");
                 slide.className = "swiper-slide";
-                slide.innerHTML = `<img src="${src}" alt="" />`;
+                slide.innerHTML = `<img src="${src}" alt="" loading="lazy"/>`;
 
                 swiperWrapper.appendChild(slide);
             });
@@ -442,7 +443,7 @@ const projects = [
                 badge.className =
                     "flex items-center gap-x-2 rounded-md bg-black/15 backdrop-blur-sm px-3 py-2 border-1 border-black/10";
                 badge.innerHTML = `
-                <img src="/projects/icons/${tech.toLowerCase()}.svg" alt="${tech}" width="16" height="16" class="shrink-0 invert"/>
+                <img src="/projects/icons/${tech.toLowerCase()}.svg" alt="${tech}" width="16" height="16" class="shrink-0 invert" loading="lazy"/>
                 <span class="font-thin text-sm text-slate-50">${tech}</span>
             `;
                 stackContainer.appendChild(badge);
