@@ -130,36 +130,44 @@ const projects = [
 ---
 
 <div
-    class="flex flex-col items-center justify-center min-h-screen py-12 relative"
+    class="flex flex-col items-center justify-center min-h-screen py-12 relative px-4 md:px-0"
 >
-    <h2 class="font-bold text-slate-50 text-6xl py-12 ">Proyectos destacados</h2>
+    <h2 class="font-bold text-slate-50 text-4xl md:text-6xl py-12 text-center">
+        Proyectos destacados
+    </h2>
     <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-950/60 -z-10 rounded-full w-225 h-225"
         style="filter: blur(120px)"
     >
     </div>
 
-    <div class="grid grid-cols-2 gap-x-12 gap-y-10 relative ">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 relative">
         {projects.map((project) => <ProjectCard {...project} />)}
     </div>
 
     <dialog
         id="project-dialog"
-        class="fixed mx-auto my-auto rounded-2xl border-2 border-black/95 py-4 w-290 h-140 drop-shadow-2xl transition-all overflow-hidden"
+        class="fixed mx-auto my-auto rounded-2xl border-2 border-black/95 py-4 drop-shadow-2xl transition-all
+               w-[95vw] max-h-[90vh] overflow-y-auto
+               md:w-290 md:h-140 md:overflow-hidden md:max-h-none"
     >
         <div
             id="dialog-gradient"
-            class="rounded-xl absolute inset-0 h-full -z-10"
+            class="absolute inset-0 min-h-full rounded-xl -z-10"
         >
         </div>
-        <div class="grid grid-cols-[2fr_1fr] h-full pl-5 relative">
-            <div class="flex flex-col items-center gap-4 px-12 h-full min-h-0">
-                <div class="rounded-2xl mt-8 mx-auto shrink-0">
+        <div
+            class="grid grid-cols-1 md:grid-cols-[2fr_1fr] md:h-full pl-5 relative"
+        >
+            <div
+                class="flex flex-col items-center gap-4 px-4 md:px-12 md:h-full min-h-0"
+            >
+                <div class="rounded-2xl mt-8 mx-auto shrink-0 w-full">
                     <Swiper />
                 </div>
 
                 <div
-                    class="scroll-text flex-1 min-h-0 overflow-y-auto pr-2 py-5 flex flex-col gap-4 font-medium text-md/7 max-w-[60ch]"
+                    class="scroll-text flex-1 min-h-0 pr-2 py-5 flex flex-col gap-4 font-medium text-md/7 max-w-[60ch] md:overflow-y-auto"
                 >
                     <p
                         id="dialog-text-1"
@@ -178,9 +186,15 @@ const projects = [
                     </p>
                 </div>
             </div>
-            <aside class="flex flex-col relative h-full pl-7 pr-3">
-                <div class="aside-header relative mt-8 pb-3">
-                    <h2 class="text-4xl text-start mb-2" id="dialog-name"></h2>
+            <aside
+                class="flex flex-col relative md:h-full pl-4 md:pl-7 pr-3 mt-6 md:mt-0"
+            >
+                <div class="aside-header relative mt-4 md:mt-8 pb-3">
+                    <h2
+                        class="text-3xl md:text-4xl text-start mb-2"
+                        id="dialog-name"
+                    >
+                    </h2>
                     <p
                         class="text-sm max-w-prose text-gray-700 text-pretty text-start italic"
                         id="dialog-description"
@@ -210,14 +224,28 @@ const projects = [
                     >
                     </div>
 
-                    <div class="flex flex-col w-full gap-2 mt-auto pb-7 z-10">
-                        <Button as="a" id="dialog-url" variant="primary" target="_blank" rel="noopener noreferrer">
+                    <div
+                        class="flex flex-col w-full gap-2 mt-6 md:mt-auto pb-7 z-10"
+                    >
+                        <Button
+                            as="a"
+                            id="dialog-url"
+                            variant="primary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <ExternalIcon slot="icon" />
                             <span id="dialog-url-label">Visitar página</span>
                             <div></div>
                         </Button>
 
-                        <Button as="a" id="dialog-repo" variant="ghost" target="_blank" rel="noopener noreferrer">
+                        <Button
+                            as="a"
+                            id="dialog-repo"
+                            variant="ghost"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <GithubIcon slot="icon" />
                             Ver código
                             <div></div>
@@ -228,12 +256,12 @@ const projects = [
                     id="dialog-aside-logo"
                     src=""
                     alt=""
-                    class="absolute bottom-0 right-0 w-64 h-64 object-contain opacity-5 pointer-events-none select-none z-0"
+                    class="hidden md:block absolute bottom-0 right-0 w-64 h-64 object-contain opacity-5 pointer-events-none select-none z-0"
                     loading="lazy"
                 />
             </aside>
             <div
-                class="absolute top-0 right-3.5 text-gray-600/70 hover:text-red-500/50 transition-colors cursor-pointer"
+                class="absolute top-0 right-3.5 text-gray-600/70 hover:text-red-500/50 transition-colors cursor-pointer z-20"
                 id="closeBtn"
             >
                 <CloseIcon />

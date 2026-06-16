@@ -3,7 +3,7 @@ import LeftIcon from "./icons/LeftIcon.astro";
 import RightIcon from "./icons/RightIcon.astro";
 ---
 
-<div class="relative w-150">
+<div class="relative w-full">
     <div
         class="swiper w-full h-full rounded-2xl border-3 border-black drop-shadow-2xl"
     >
@@ -12,12 +12,14 @@ import RightIcon from "./icons/RightIcon.astro";
     </div>
 
     <button
-        class="left-arrow absolute -left-12 top-1/2 -translate-y-1/2 z-10 text-white drop-shadow-lg hover:text-[#fecc9e] active:text-[#ffad60] transition-colors cursor-pointer"
+        class="left-arrow absolute -left-12 top-1/2 -translate-y-1/2 z-10 text-white drop-shadow-lg hover:text-[#fecc9e] active:text-[#ffad60] transition-colors cursor-pointer
+               hidden md:flex"
     >
         <LeftIcon />
     </button>
     <button
-        class="right-arrow absolute -right-12 top-1/2 -translate-y-1/2 z-10 text-white drop-shadow-lg hover:text-[#fecc9e] active:text-[#ffad60] transition-colors cursor-pointer"
+        class="right-arrow absolute -right-12 top-1/2 -translate-y-1/2 z-10 text-white drop-shadow-lg hover:text-[#fecc9e] active:text-[#ffad60] transition-colors cursor-pointer
+               hidden md:flex"
     >
         <RightIcon />
     </button>

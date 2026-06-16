@@ -1,24 +1,57 @@
 ---
+import HamburgerIcon from "./icons/HamburgerIcon.astro";
 import SunIcon from "./icons/SunIcon.astro";
 import LangIcon from "./icons/LangIcon.astro";
 ---
 
 <header
-    class="flex h-25 mt-3 px-11 justify-between items-center w-[80vw] mx-auto border-2 border-slate-300/40 rounded-[38px] bg-slate-300/30 absolute top-8 left-0 right-0 backdrop-blur-2xl backdrop-brightness-50 z-100"
+    class="flex justify-between items-center
+    w-[95vw] md:w-[80vw]
+    h-18 md:h-25
+    px-4 md:px-11
+    mx-auto
+    border-2 border-slate-300/40
+    rounded-3xl md:rounded-[38px]
+    bg-slate-300/30
+    absolute top-4 md:top-8 left-0 right-0
+    backdrop-blur-2xl backdrop-brightness-50
+    z-100"
 >
-    <span class="font-bold text-4xl text-white">Sebastián Fraga</span>
-    <div class="flex gap-6.5">
-        <nav class="flex gap-6 text-1xl text-white">
+    <span class="font-bold text-lg sm:text-2xl md:text-4xl text-white">
+        Sebastián Fraga
+    </span>
+
+    <div class="flex items-center gap-3 md:gap-6.5">
+        <button
+            id="menuToggle"
+            class="md:hidden text-white text-3xl"
+            aria-label="Abrir menú"
+        >
+            <HamburgerIcon />
+        </button>
+
+        <nav class="hidden md:flex gap-6 text-xl text-white">
             <a href="#home">Inicio</a>
             <a href="#projects">Proyectos</a>
             <a href="#about">Sobre mí</a>
             <a href="#contact">Contacto</a>
         </nav>
-        <div class="flex gap-5 text-white">
-            <button id="appearanceToggle" class="cursor-not-allowed">
+
+        <nav
+            id="mobileMenu"
+            class="absolute top-full left-0 right-0 mt-3 text-white bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-300/30 flex flex-col items-center gap-4 py-6 hidden"
+        >
+            <a href="#home">Inicio</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#about">Sobre mí</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+
+        <div class="flex gap-3 md:gap-5 text-white">
+            <button id="appearanceToggle">
                 <SunIcon />
             </button>
-            <button id="langToggle" class="cursor-not-allowed">
+            <button id="langToggle">
                 <LangIcon />
             </button>
         </div>
@@ -39,13 +72,20 @@ import LangIcon from "./icons/LangIcon.astro";
             top: 2rem;
             left: 0;
             right: 0;
-            width: 80vw;
+            width: 95vw;
             margin: 0 auto;
             transition: opacity 0.2s ease;
             opacity: 1;
             pointer-events: all;
         }
     }
+
+    @media (min-width: 768px) {
+        header.is-sticky {
+            width: 80vw;
+        }
+    }
+
     nav a:not(.active) {
         font-weight: 100;
         transition: all 0.4s ease-out;
@@ -72,17 +112,49 @@ import LangIcon from "./icons/LangIcon.astro";
 </style>
 
 <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+    });
+
+    const menuLinks = document.querySelectorAll("#mobileMenu a");
+
+    menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            mobileMenu?.classList.add("hidden");
+        });
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+            mobileMenu?.classList.add("hidden");
+        }
+    });
+</script>
+
+<script>
     const header = document.querySelector("header");
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("nav a");
 
+    function addAnimationClass() {
+        header?.classList.remove("animated");
+        void header?.offsetWidth;
+        header?.classList.add("animated");
+    }
+
     window.addEventListener("scroll", () => {
         const currentScroll = window.pageYOffset;
         if (currentScroll > 100) {
-            header?.classList.add("is-sticky");
-            header?.classList.add("animated"); 
+            if (!header?.classList.contains("is-sticky")) {
+                header?.classList.add("is-sticky");
+                addAnimationClass();
+            }
         } else {
             header?.classList.remove("is-sticky");
+            header?.classList.remove("animated");
         }
     });
 
@@ -90,7 +162,7 @@ import LangIcon from "./icons/LangIcon.astro";
         (entries) => {
             entries.forEach((entry) => {
                 const link = document.querySelector(
-                    `nav  a[href="#${entry.target.id}"]`,
+                    `nav a[href="#${entry.target.id}"]`,
                 );
                 if (entry.isIntersecting) {
                     navLinks.forEach((l) => l.classList.remove("active"));
@@ -98,7 +170,7 @@ import LangIcon from "./icons/LangIcon.astro";
                 }
             });
         },
-        { threshold: 0.5 },
+        { threshold: 0.3 },
     );
 
     sections.forEach((section) => observer.observe(section));

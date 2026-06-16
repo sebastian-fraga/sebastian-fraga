@@ -2,13 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 import Home from "../sections/Home.astro";
 import Projects from "../sections/Projects.astro";
 import About from "../sections/About.astro";
 import Contact from "../sections/Contact.astro";
 
-import "../scripts/scroll-animations"
+import "../scripts/scroll-animations";
 ---
 
 <Layout>
@@ -26,5 +27,6 @@ import "../scripts/scroll-animations"
         <section class="min-h-screen" id="contact">
             <Contact />
         </section>
+        <Footer />
     </main>
 </Layout>

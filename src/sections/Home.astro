@@ -5,17 +5,28 @@ import DownIcon from "../components/icons/DownIcon.astro";
 <div class="flex flex-col items-center justify-between min-h-screen py-12">
     <div></div>
 
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center px-4">
         <img
-            class="rounded-[50px] w-50 h-50 mb-8 border-2 border-amber-50/20"
+            class="rounded-[50px] w-32 h-32 md:w-50 md:h-50 mb-6 md:mb-8 border-2 border-amber-50/20"
             src="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png"
             alt="Imagen de Sebastián Fraga"
         />
-        <h1 class="text-8xl text-slate-50 font-bold">Sebastián Fraga</h1>
-        <p class="text-3xl text-white font-medium mb-4">
+
+        <h1
+            class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-slate-50 font-bold text-center mb-1 md:mb-2"
+        >
+            Sebastián Fraga
+        </h1>
+
+        <p
+            class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-medium mb-4 text-center"
+        >
             Desarrollador web Front-end
         </p>
-        <p class="text-xl text-slate-300 font-medium">
+
+        <p
+            class="text-base sm:text-lg md:text-xl text-slate-300 font-medium text-center"
+        >
             Especializado en
             <span class="text-orange-300/90">Astro</span> ·
             <span class="text-cyan-300/90">React</span> ·
@@ -23,7 +34,9 @@ import DownIcon from "../components/icons/DownIcon.astro";
         </p>
     </div>
 
-    <div class="text-white/70 animate-bounce hover:text-white transition-colors">
+    <div
+        class="text-white/70 animate-bounce hover:text-white transition-colors"
+    >
         <a href="#projects">
             <DownIcon />
         </a>

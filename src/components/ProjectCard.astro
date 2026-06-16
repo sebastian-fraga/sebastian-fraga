@@ -24,15 +24,15 @@ interface Props {
 const {
     name,
     logo,
-    nameStyle,
-    fontUrl,
-    screenshots,
-    text1,
-    text2,
-    text3,
+    nameStyle = "",
+    fontUrl = "",
+    screenshots = [],
+    text1 = "",
+    text2 = "",
+    text3 = "",
     description,
-    year,
-    status,
+    year = "",
+    status = "",
     image,
     alt,
     url,
@@ -45,7 +45,13 @@ const {
 ---
 
 <article
-    class="rounded-2xl border-2 border-amber-50/80 w-190 aspect-video relative hover:scale-102 cursor-pointer transition-all"
+    role="button"
+    tabindex="0"
+    class="w-full max-w-190 aspect-video
+        rounded-2xl border-2 border-amber-50/80
+        relative
+        hover:scale-[1.02] cursor-pointer transition-all
+        focus-visible:outline-2 focus-visible:outline-amber-50/80 focus-visible:outline-offset-2"
     data-name={name}
     data-name-style={nameStyle}
     data-font-url={fontUrl}
@@ -64,9 +70,14 @@ const {
     data-logo={logo}
     data-stack={JSON.stringify(stack)}
 >
-    <img class="rounded-[14px]" src={image} alt={alt} loading="lazy" />
+    <img
+        class="rounded-[14px] w-full h-full object-cover"
+        src={image}
+        alt={alt}
+        loading="eager"
+    />
     <p
-        class="absolute bottom-0 py-3 w-full text-center text-2xl bg-slate-200/30 backdrop-blur-2xl border-t-2 border-amber-50/30 rounded-b-2xl text-slate-100 font-bold"
+        class="absolute bottom-0 py-3 w-full text-center text-lg md:text-2xl bg-slate-200/30 backdrop-blur-2xl border-t-2 border-amber-50/30 rounded-b-2xl text-slate-100 font-bold"
     >
         {name}
     </p>

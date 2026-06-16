@@ -73,19 +73,29 @@ const skillCategories = [
 ---
 
 <div
-    class="bg-linear-180 from-[#F3A864] to-[#8D623A] rounded-3xl grid grid-cols-[1fr_2fr] gap-x-0 drop-shadow-2xl w-250 h-145"
+    class="bg-linear-180 from-[#F3A864] to-[#8D623A]
+    rounded-3xl
+    grid grid-cols-1 lg:grid-cols-[1fr_2fr]
+    drop-shadow-2xl
+    w-full max-w-250"
 >
-    <aside class="px-6 pt-10 pb-5 flex flex-col justify-between items-center">
+    <aside
+        class="px-6 py-8 flex flex-col items-center gap-8 lg:justify-between"
+    >
         <div class="flex flex-col items-center gap-5">
-            <div class="w-37 h-37 rounded-2xl border drop-shadow-3xl">
+            <div
+                class="w-32 h-32 md:w-37 md:h-37 rounded-2xl border drop-shadow-3xl"
+            >
                 <img
                     src=""
                     alt=""
                     width="148"
                     height="148"
                     class="w-full h-full object-cover"
+                    loading="lazy"
                 />
             </div>
+
             <div class="flex items-center gap-4">
                 <a
                     href="https://github.com/sebastian-fraga"
@@ -93,6 +103,7 @@ const skillCategories = [
                 >
                     <GithubIcon />
                 </a>
+
                 <a
                     href="mailto:fragasebastian1@gmail.com"
                     class="bg-red-50 px-6 py-2.5 rounded-lg outline outline-black drop-shadow-xl transition-all hover:bg-amber-100 hover:outline-2 hover:outline-black"
@@ -101,65 +112,93 @@ const skillCategories = [
                 </a>
             </div>
         </div>
+
         <ul
-            class="flex flex-col gap-3 bg-amber-100 p-5 rounded-3xl drop-shadow-xl"
+            class="flex flex-col gap-3 bg-amber-100 p-5 rounded-3xl drop-shadow-xl w-full max-w-sm"
         >
             <li class="flex items-center gap-2">
                 <PinIcon />
                 <span class="font-light text-sm">Buenos Aires</span>
             </li>
+
             <li class="flex items-center gap-2">
                 <WorkIcon />
                 <span class="font-light text-sm">Disponible para trabajar</span>
             </li>
+
             <li class="flex items-center gap-2">
                 <LangIcon />
                 <span class="font-light text-sm">Español / English</span>
             </li>
         </ul>
-        <SpotifyCard />
+
+        <div class="w-full max-w-sm">
+            <SpotifyCard />
+        </div>
     </aside>
+
     <div
-        class="bg-linear-180 from-[#797979] to-[#373737] rounded-3xl pl-9 py-5 overflow-y-hidden text-slate-50"
+        class="bg-linear-180 from-[#797979] to-[#373737]
+        rounded-3xl
+        p-5 md:pl-9 md:py-5
+        text-slate-50"
     >
-        <div class="h-full overflow-y-scroll custom-scroll pt-4 pr-6">
+        <div
+            class="pt-4 md:pr-6
+            lg:h-145
+            lg:overflow-y-scroll
+            custom-scroll"
+        >
             <div class="flex flex-col gap-12">
                 <div class="flex flex-col gap-6">
-                    <h3 class="font-semibold text-3xl">¿Quién soy?</h3>
-                    <p class="font-medium text-xl ml-4 text-gray-200">
+                    <h3 class="font-semibold text-2xl md:text-3xl">
+                        ¿Quién soy?
+                    </h3>
+
+                    <p class="font-medium text-base md:text-xl text-gray-200">
                         Mi nombre es Sebastián Fraga. Soy un desarrollador
                         front-end autodidacta oriundo de Buenos Aires,
                         Argentina.
                     </p>
-                    <p class="font-medium text-xl ml-4 text-gray-200">
+
+                    <p class="font-medium text-base md:text-xl text-gray-200">
                         Me caracterizo por realizar experiencias web con
                         atención al detalle y un buen uso del UI y UX.
                     </p>
-                    <p class="font-medium text-xl ml-4 text-gray-200">
+
+                    <p class="font-medium text-base md:text-xl text-gray-200">
                         Actualmente tengo 23 años y sigo estudiando y
                         aprendiendo todos los días.
                     </p>
                 </div>
+
                 <div class="flex flex-col gap-6">
-                    <h3 class="font-semibold text-3xl">Habilidades</h3>
+                    <h3 class="font-semibold text-2xl md:text-3xl">
+                        Habilidades
+                    </h3>
 
                     {
                         skillCategories.map((category) => (
                             <div class="flex flex-col gap-3">
-                                <h4 class="text-xl font-medium">
+                                <h4 class="text-lg md:text-xl font-medium">
                                     {category.name}
                                 </h4>
 
                                 <div class="flex flex-wrap gap-3">
                                     {category.skills.map((skill) => (
                                         <div
-                                            class="flex items-center justify-center w-14 h-14 rounded-xl bg-linear-180 from-slate-500 to-slate-600 border border-slate-700/90 drop-shadow-xl"
+                                            class="flex items-center justify-center
+                                            w-12 h-12 md:w-14 md:h-14
+                                            rounded-xl
+                                            bg-linear-180 from-slate-500 to-slate-600
+                                            border border-slate-700/90
+                                            drop-shadow-xl"
                                             title={skill.name}
                                         >
                                             <img
                                                 src={skill.icon}
                                                 alt={skill.name}
-                                                class="w-8 h-8"
+                                                class="w-7 h-7 md:w-8 md:h-8"
                                                 width="32"
                                                 height="32"
                                                 loading="lazy"

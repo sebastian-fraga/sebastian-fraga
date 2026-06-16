@@ -1,40 +1,49 @@
 <div
     class="bg-linear-135 from-[#F4AC46] to-[#462e17]
     rounded-3xl
-    grid grid-cols-[1.1fr_1px_0.9fr]
-    gap-x-8
-    w-270 h-125
+    w-full max-w-270
     text-slate-50
-    py-10 px-12.5
-    drop-shadow-2xl"
+    drop-shadow-2xl
+    grid grid-cols-1
+    lg:grid-cols-[1.1fr_1px_0.9fr]
+    gap-8
+    px-5 py-6
+    md:px-8 md:py-8
+    lg:px-12.5 lg:py-10"
 >
-    <div class="flex flex-col justify-between items-start">
-        <div class="flex flex-col gap-12">
-            <h3 class="font-semibold text-4xl">
+    <div class="flex flex-col gap-8 lg:justify-between">
+        <div class="flex flex-col gap-8 lg:gap-12">
+            <h3 class="font-semibold text-3xl md:text-4xl">
                 ¿Tienes un proyecto en mente?
             </h3>
-            <p class="text-2xl leading-9 font-light max-w-[30ch] text-pretty">
+
+            <p
+                class="text-lg md:text-2xl leading-8 md:leading-9 font-light max-w-[30ch] text-pretty"
+            >
                 Puedo ayudarte a construir interfaces rápidas, accesibles y con
                 atención al detalle.
             </p>
         </div>
+
         <div class="flex items-center gap-2.5 text-amber-100">
-            <span class="font-semibold text-2xl">✦</span>
-            <p class="font-regular text-xl">Respuesta en 24hs!</p>
+            <span class="font-semibold text-xl md:text-2xl">✦</span>
+            <p class="font-regular text-base md:text-xl">¡Respuesta en 24hs!</p>
         </div>
     </div>
+
     <div
-        class="bg-linear-180 from-transparent via-slate-100/20 to-transparent h-full rounded-full"
+        class="hidden lg:block bg-linear-180 from-transparent via-slate-100/20 to-transparent h-full rounded-full"
     >
     </div>
-    <div class="h-full text-black">
+
+    <div class="text-black">
         <form
             id="contactForm"
             action=""
-            class="w-full h-full bg-white rounded-[30px] px-5 pt-6 pb-5 flex flex-col gap-6"
+            class="w-full bg-white rounded-[30px] px-5 pt-6 pb-5 flex flex-col gap-6"
             autocomplete="off"
         >
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="relative">
                     <label for="firstName" class="floating-label">
                         Nombre
@@ -97,10 +106,9 @@
                 </select>
             </div>
 
-            <div class="relative flex-1">
+            <div class="relative">
                 <label for="message" class="floating-label">
                     Mensaje
-
                     <span class="text-red-400">*</span>
                 </label>
 
@@ -142,9 +150,10 @@
         font-size: 14px;
         font-weight: 600;
     }
+
     textarea {
-        resize: none;
-        height: 100% !important;
+        resize: vertical;
+        min-height: 140px;
         padding-block: 8px;
     }
 </style>
