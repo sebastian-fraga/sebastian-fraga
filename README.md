@@ -53,13 +53,18 @@ I'm a **front-end developer** focused on modern web experiences, with an eye for
 
 ---
 
-### ⭐ Featured project
+### ⭐ Featured projects
 
 **Vice Club** — Modern GTA-inspired community platform built with Astro, vanilla components, and interactive UI systems.
 
 [![Visit Website](https://img.shields.io/badge/Visit%20Website-8A2BE2?style=for-the-badge&logoColor=white)](https://viceclub.app)
 [![View Source](https://img.shields.io/badge/View%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sebastian-fraga/viceclub)
 
+
+**SebaWeather** — Weather app built with React and WeatherAPI, providing weather forecasts, current temperatures, wind speeds, and detailed weather conditions.
+
+[![Visit Website](https://img.shields.io/badge/Visit%20Website-8A2BE2?style=for-the-badge&logoColor=white)](https://sebaweather.vercel.app/)
+[![View Source](https://img.shields.io/badge/View%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sebastian-fraga/sebaweather)
 ---
 
 ### 🌐 Let's connect
