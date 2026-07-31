@@ -65,6 +65,11 @@ I'm a **front-end developer** focused on modern web experiences, with an eye for
 
 [![Visit Website](https://img.shields.io/badge/Visit%20Website-8A2BE2?style=for-the-badge&logoColor=white)](https://sebaweather.vercel.app/)
 [![View Source](https://img.shields.io/badge/View%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sebastian-fraga/sebaweather)
+
+**Lynk** — Downloader app for videos, music, and posts across the most popular social media platforms.
+
+[![Visit Website](https://img.shields.io/badge/Visit%20Website-8A2BE2?style=for-the-badge&logoColor=white)](https://lynk-plum.vercel.app/)
+[![View Source](https://img.shields.io/badge/View%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sebastian-fraga/lynk)
 ---
 
 ### 🌐 Let's connect
